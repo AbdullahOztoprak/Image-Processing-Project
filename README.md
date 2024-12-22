@@ -70,6 +70,24 @@ Color Corrected Test Set
 ## Attempt to Improve the Model
 After observing the low accuracies on both manipulated and color-corrected test sets, I attempted to improve the model by leveraging a pre-trained VGG16 architecture and adding custom layers to enhance feature extraction. Below is the code I used to create the new model:
 
+# Load the pretrained VGG16 model
+base_model = VGG16(weights='imagenet', include_top=False, input_shape=(128, 128, 3))
+
+# Freeze the base model layers
+base_model.trainable = False
+
+# Build the new model
+model = Sequential([
+    base_model,
+    Flatten(),
+    Dense(256, activation='relu'),
+    Dropout(0.5),  # To prevent overfitting
+    Dense(128, activation='relu'),
+    Dropout(0.3),
+    Dense(10, activation='softmax')  # 10 classes for your dataset
+])
+
+
 Unfortunately, while trying to execute this code, I encountered the following error
 ValueError: Undefined shapes are not supported.
 This prevented me from completing the training and testing process with the new model. The issue might stem from incorrect input shape definitions, dataset preprocessing, or incompatibility between the pre-trained model and my dataset.
