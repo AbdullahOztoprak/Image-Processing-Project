@@ -1,5 +1,6 @@
 # Image-Processing-Project
 Aygaz Görüntü İşleme Bootcamp: Yeni Nesil Proje Kampı
+Kaggle Notebook Link: https://www.kaggle.com/code/abdullahoztoprak/image-processing-project
 
 # Animal Classification using CNNs
 ##Overview
