@@ -63,6 +63,13 @@ Color Corrected Test Set
 
 ## Results
 ### Test Set	Accuracy
-Original Test Set	35.49%
-Brightness Manipulated Test Set	9.69%
-Color Corrected Test Set	9.69%
+* Original Test Set	35.49%
+* Brightness Manipulated Test Set	9.69%
+* Color Corrected Test Set	9.69%
+
+## Attempt to Improve the Model
+After observing the low accuracies on both manipulated and color-corrected test sets, I attempted to improve the model by leveraging a pre-trained VGG16 architecture and adding custom layers to enhance feature extraction. Below is the code I used to create the new model:
+
+Unfortunately, while trying to execute this code, I encountered the following error
+ValueError: Undefined shapes are not supported.
+This prevented me from completing the training and testing process with the new model. The issue might stem from incorrect input shape definitions, dataset preprocessing, or incompatibility between the pre-trained model and my dataset.
